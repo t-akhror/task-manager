@@ -1,1 +1,25 @@
-
+.pendingCard {
+  border: 1px solid #fac10a;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+.doingCard {
+  border: 1px solid #2c6efd;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+.doneCard {
+  border: 1px solid #258753;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  min-height: 218.75px;
+}
+.rejectedCard {
+  border: 1px solid #dc3645;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
