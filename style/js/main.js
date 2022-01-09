@@ -44,13 +44,13 @@ function drawTask() {
         if (taskList[i].status==='pending'){
             document.getElementById('pendingTaskList').innerHTML +=
                 '<div class="pendingCard">'+
-                '<h6>'+ "Topshiriq: "+taskList[i].task +
-                (taskList[i].isRejected ? '<span class="badge bg-danger">Rejected</span>' : ' ')+'</h6>'+
-                '<h6>'+ "Xodim: "+taskList[i].staff +'</h6>'+
-                '<h6>'+ "Boshlash vaqti: "+taskList[i].startDate +'</h6>'+
-                '<h6>'+ "Tugatish vaqti: "+taskList[i].endDate +'</h6>'+
+                '<h6>'+ "Task: "+taskList[i].task +
+                (taskList[i].isRejected ? '<span class="badge bg-danger"> Rejected</span>' : ' ')+'</h6>'+
+                '<h6>'+ "Staff: "+taskList[i].staff +'</h6>'+
+                '<h6>'+ "Start Date: "+taskList[i].startDate +'</h6>'+
+                '<h6>'+ "End Date: "+taskList[i].endDate +'</h6>'+
                 '<select class="form-control mb-3" id="editedStatus'+i+'">' +
-                '<option selected disabled>tanlang</option>' +
+                '<option selected disabled>choose</option>' +
                 '<option value="doing">doing</option>' +
                 '<option value="done">done</option>' +
                 '</select>'+
@@ -62,13 +62,13 @@ function drawTask() {
            
             document.getElementById('doingTaskList').innerHTML +=
                 '<div class="doingCard">'+
-                '<h6>'+ "Topshiriq: "+taskList[i].task +
-                (taskList[i].isRejected ? '<span class="badge bg-danger">Rejected</span>' : ' ')+'</h6>'+
-                '<h6>'+ "Xodim: "+taskList[i].staff +'</h6>'+
-                '<h6>'+ "Boshlash vaqti: "+taskList[i].startDate +'</h6>'+
-                '<h6>'+ "Tugatish vaqti: "+taskList[i].endDate +'</h6>'+
+                '<h6>'+ "Task: "+taskList[i].task +
+                (taskList[i].isRejected ? '<span class="badge bg-danger"> Rejected</span>' : ' ')+'</h6>'+
+                '<h6>'+ "Staff: "+taskList[i].staff +'</h6>'+
+                '<h6>'+ "Start Date: "+taskList[i].startDate +'</h6>'+
+                '<h6>'+ "End date: "+taskList[i].endDate +'</h6>'+
                 '<select class="form-control mb-3" id="editedStatus'+i+'">' +
-                '<option selected disabled>tanlang</option>' +
+                '<option selected disabled>choose</option>' +
                 '<option value="pending">pending</option>' +
                 '<option value="done">done</option>' +
                 '</select>'+
@@ -80,11 +80,11 @@ function drawTask() {
           
             document.getElementById('doneTaskList').innerHTML +=
                 '<div class="doneCard">'+
-                '<h6>'+ "Topshiriq: "+taskList[i].task +
-                (taskList[i].isRejected ? '<span class="badge bg-danger">Rejected</span>' : ' ')+'</h6>'+
-                '<h6>'+ "Xodim: "+taskList[i].staff +'</h6>'+
-                '<h6>'+ "Boshlash vaqti: "+taskList[i].startDate +'</h6>'+
-                '<h6>'+ "Tugatish vaqti: "+taskList[i].endDate +'</h6>'+
+                '<h6>'+ "Task: "+taskList[i].task +
+                (taskList[i].isRejected ? '<span class="badge bg-danger"> Rejected</span>' : ' ')+'</h6>'+
+                '<h6>'+ "Staff: "+taskList[i].staff +'</h6>'+
+                '<h6>'+ "Start Date: "+taskList[i].startDate +'</h6>'+
+                '<h6>'+ "End Date: "+taskList[i].endDate +'</h6>'+
                 '<button type="button" onclick="rejectTask('+i+')"class="btn btn-danger d w-75">Rejected</button>'+
                 '</div>'
         }
@@ -92,12 +92,12 @@ function drawTask() {
             
             document.getElementById('rejectedTaskList').innerHTML +=
                 '<div class="rejectedCard">'+
-                '<h6>'+ "Topshiriq: "+taskList[i].task +'</h6>'+
-                '<h6>'+ "Xodim: "+taskList[i].staff +'</h6>'+
-                '<h6>'+ "Boshlash vaqti: "+taskList[i].startDate +'</h6>'+
-                '<h6>'+ "Tugatish vaqti: "+taskList[i].endDate +'</h6>'+
+                '<h6>'+ "Task: "+taskList[i].task +'</h6>'+
+                '<h6>'+ "Staff: "+taskList[i].staff +'</h6>'+
+                '<h6>'+ "Start Date: "+taskList[i].startDate +'</h6>'+
+                '<h6>'+ "End Date: "+taskList[i].endDate +'</h6>'+
                 '<select class="form-control mb-3" id="editedStatus'+i+'">' +
-                '<option selected disabled>tanlang</option>' +
+                '<option selected disabled>choose</option>' +
                 '<option value="pending">pending</option>' +
                 '<option value="doing">doing</option>' +
                 '</select>'+
@@ -115,7 +115,7 @@ function addTask(){
     let staff=document.forms['myForm']['staff'].value;
     let status=document.forms['myForm']['status'].value;
     if (task.trim().length>0 && startDate.trim().length>0 
-        && endDate.trim().length>0 && staff.length>0 && status.length>0 ){
+        && endDate.trim().length>0 && staff !='choose' && status !='choose' ){
             let newTask={
                 task, 
                 startDate, 
@@ -129,7 +129,7 @@ function addTask(){
             document.forms['myForm'].reset();
 
     }else{
-        alert("Hammasini to'ldiring!");
+        alert("Fill all fields!");
     }
 
 }
@@ -145,8 +145,8 @@ function rejectTask(taskIndex){
 }
 function editTask(editIndex){
     let selectedStatus=document.getElementById("editedStatus"+editIndex).value;
-   if(selectedStatus!='tanlang'){
+   if(selectedStatus!='choose'){
        taskList[editIndex].status=selectedStatus;
        drawTask();
-   }else alert('Statusini tanlang!');
+   }else alert('Choose status!');
 }
