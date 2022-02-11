@@ -53,8 +53,8 @@ function drawTask() {
                 '<option value="doing">doing</option>' +
                 '<option value="done">done</option>' +
                 '</select>'+
-                '<button type="button" onclick="editTask('+i+')" type="button"  class="btn btn-warning d w-50">Edit</button>'+
-                '<button type="button" onclick="deleteTask('+i+')" class="btn btn-danger d w-50">Delete</button>'+
+                '<button type="button" onclick="editTask('+i+')" type="button"  class="btn btn-warning btn-sm me-3  px-4">Edit</button>'+
+                '<button type="button" onclick="deleteTask('+i+')" class="btn btn-danger btn-sm  px-4">Delete</button>'+
                 '</div>'
         }
         else if (taskList[i].status==='doing'){
@@ -71,8 +71,8 @@ function drawTask() {
                 '<option value="pending">pending</option>' +
                 '<option value="done">done</option>' +
                 '</select>'+
-                '<button type="button" onclick="editTask('+i+')" class="btn btn-warning d w-50">Edit</button>'+
-                '<button type="button" onclick="deleteTask('+i+')" class="btn btn-danger d w-50">Delete</button>'+
+                '<button type="button" onclick="editTask('+i+')" class="btn btn-warning btn-sm me-3  px-4">Edit</button>'+
+                '<button type="button" onclick="deleteTask('+i+')" class="btn btn-danger btn-sm  px-4">Delete</button>'+
                 '</div>'
         }
         else if (taskList[i].status==='done'){
@@ -84,7 +84,7 @@ function drawTask() {
                 '<h6>'+ "Staff: "+taskList[i].staff +'</h6>'+
                 '<h6>'+ "Start Date: "+taskList[i].startDate +'</h6>'+
                 '<h6>'+ "End Date: "+taskList[i].endDate +'</h6>'+
-                '<button type="button" onclick="rejectTask('+i+')"class="btn btn-danger d w-75">Rejected</button>'+
+                '<button type="button" onclick="rejectTask('+i+')"class="btn btn-danger btn-sm   px-4">Rejected</button>'+
                 '</div>'
         }
         else{
@@ -100,7 +100,7 @@ function drawTask() {
                 '<option value="pending">pending</option>' +
                 '<option value="doing">doing</option>' +
                 '</select>'+
-                '<button type="button" onclick="editTask('+i+')" class="btn btn-warning d w-50">Edit</button>'+
+                '<button type="button" onclick="editTask('+i+')" class="btn btn-warning btn-sm   px-4">Edit</button>'+
                 '</div>'
         }
     }
