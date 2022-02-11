@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Task manager app</title>
-    <link rel="stylesheet" href="style/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style/css/main.css">
+    <title>Task manager</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-<div class="container">
+
+<div class="container mt-5">
     <div class="row my-3">
         <div class="col">
             <div class="card">
@@ -16,22 +17,22 @@
                 </div>
                 <div class="card-body">
                     <form name="myForm">
-                        <label for="task">Enter Task</label>
+                        <label for="task"> Task</label>
                         <textarea class="form-control mb-2" name="task" id="task" 
                                   cols="30" rows="3"></textarea>
 
-                        <label for="startDate">Start date</label>
+                        <label for="startDate">Start Date</label>
                         <input type="date" id="startDate" name="starDate" class="form-control mb-2">
 
 
                         <label for="endDate">End date</label>
                         <input type="date" id="endDate" name="endDate" class="form-control mb-2">
 
-                        <label for="staff">Choose staff</label>
+                        <label for="staff">Choose Staff</label>
                         <select class="form-control mb-2" name="staff" id="staff">
                             <option selected disabled>choose</option>
                             <option value="muhammad">Muhammad</option>
-                            <option value="axror">Axror</option>
+                            <option value="axror">Akhror</option>
                             <option value="doston">Doston</option>
                         </select>
 
@@ -54,16 +55,20 @@
                     <h4>Pending task</h4>
                 </div>
             </div>
-                <div class="" id="pendingTaskList">      
-                </div>     
+                <div class="" id="pendingTaskList">
+                  
+                </div>
+            
         </div>
         <div class="col">
             <div class="card">
                 <div class="card-header bg-primary text-center text-white">
                     <h4>Doing task</h4>
                 </div>
-            </div>            
+            </div>
+            
             <div id="doingTaskList">
+
             </div>
         </div>
         <div class="col">
@@ -73,6 +78,7 @@
                 </div>
             </div>
             <div  id="doneTaskList">
+
             </div>
         </div>
         <div class="col">
@@ -81,12 +87,17 @@
                     <h4>Rejected task</h4>
                 </div>
             </div>
+            
             <div id="rejectedTaskList">
+
             </div>
         </div>
     </div>
 </div>
-<script src="style/js/bootstrap.bundle.js"></script>
-<script src="style/js/main.js"></script>
+
+
+
+<script src="js/bootstrap.bundle.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>
